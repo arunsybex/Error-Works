@@ -4,27 +4,8 @@ import { trigger,state,style,transition,animate,keyframes } from '@angular/anima
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  animations:[
-    trigger('myAnimation',[
-      state('small',style({
-        backgroundColor: '#eee',
-        transform : 'scale(1)',
-      })),
-      state('large',style({
-        transform : 'scale(1.2)',
-      })),
-
-      transition('small <=> large', animate('300ms ease-in')),
-    ]),
-  ]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Erro Work\'s';
-
-  state: string = 'small';
-
-  animateMe(){
-    this.state = (this.state === 'small' ? 'large' : 'small');
-  }
+  title = 'Error Work\'s';
 }

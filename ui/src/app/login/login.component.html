@@ -1,0 +1,69 @@
+<!-- <form class="container example-form ">
+    <div class="row">
+        <div class="col-sm-6">
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="User Name">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="Password">
+            </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+
+        </div>
+    </div>
+  
+</form> -->
+
+<mat-grid-list cols="4" rowHeight="1:2">
+        <mat-grid-tile>
+            <mat-card >
+                <mat-card-title>Registration</mat-card-title>
+                    <mat-card-content>
+                        <form #myRForm="ngForm" (ngSubmit)="Register(myRForm.value)" class="example-container">
+                            <mat-form-field>
+                                <input type="text"  matInput placeholder="User Name" name="username" [(ngModel)]="rusername" >
+                            </mat-form-field>
+                            
+                            <mat-form-field>
+                                <input matInput placeholder="Enter your password" [type]="hide ? 'text' : 'password'" name="password" [(ngModel)]="rpassword">
+                                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                            </mat-form-field>
+
+                            <mat-form-field>
+                                <input matInput [matDatepicker]="picker" placeholder="Choose a Date Of Birth">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+
+                            <mat-card-actions>
+                                <button type="submit" mat-button>Register</button>
+                            </mat-card-actions>
+                        </form>
+                    </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+            <mat-card >
+                <mat-card-title>Login</mat-card-title>
+                    <mat-card-content>
+                        <form #myForm="ngForm" (ngSubmit)="login(myForm.value)" class="example-container">
+                            <mat-form-field>
+                                <input type="text"  matInput placeholder="User Name" name="username" [(ngModel)]="username" >
+                            </mat-form-field>
+                            
+                            <mat-form-field>
+                                <input matInput placeholder="Enter your password" [type]="hide ? 'text' : 'password'" name="password" [(ngModel)]="password">
+                                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                                </mat-form-field>
+                            <mat-card-actions>
+                                <button type="submit" mat-button>Login</button>
+                            </mat-card-actions>
+                        </form>
+                    </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+</mat-grid-list>
+      
+
