@@ -10,7 +10,7 @@ import { HttpClient,HttpParams } from  '@angular/common/http';
 })
 export class LoginComponent {
 
-  hide = true;
+  hide = false;
   username = '';
   password = '';
   API_URL = "http://localhost:8000"
@@ -26,7 +26,7 @@ export class LoginComponent {
 
   login(e) {
     
-    this.http.post(this.API_URL+'/auth/login/',e).subscribe(res => {
+    this.http.post('/auth/login/',e).subscribe(res => {
       console.log(res);
       
     })
